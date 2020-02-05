@@ -20,3 +20,5 @@ Route::get('/', function () {
 // });
 
 Route::get('/member', 'Member@index');
+
+// Route::get('/member', 'Member@index');

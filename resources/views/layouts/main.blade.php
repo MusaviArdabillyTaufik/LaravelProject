@@ -20,6 +20,7 @@
 
   <!-- Custom styles for this template -->
   <link href="css/grayscale.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
@@ -48,6 +49,8 @@
       </div>
     </div>
   </nav>
+
+  @include('layouts.header')
 
   @yield('content')
 

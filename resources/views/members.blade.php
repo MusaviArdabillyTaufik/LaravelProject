@@ -55,7 +55,7 @@
       <div class="mx-auto text-center">
         <h1 class="mx-auto my-0 ">RedAlert</h1>
         <h1 class="mx-auto my-0">Members</h2>
-          <table align="center" border="1" style="width: 90%; margin-top: 7px;">
+          <table class="table table-dark" align="center" border="1" style="width: 90%; margin-top: 7px;">
             <thead>
                 <tr style="text-align: center;">
                     <th width="80px">Id</th>

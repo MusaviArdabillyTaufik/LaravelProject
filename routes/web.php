@@ -15,4 +15,8 @@ Route::get('/', function () {
     return view('index');
 });
 
+// Route::get('/member', function () {
+//     return view('memberslayout');
+// });
+
 Route::get('/member', 'Member@index');

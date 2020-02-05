@@ -10,6 +10,7 @@
       </div>
     </div>
   </header>
+  iki kudune metu
   
   <div class="mx-auto text-center" style="margin-bottom: 22px; margin-top: 22px;">
     <table class="table table-dark" align="center" border="1" style="width: 90%; margin-top: 7px;">
@@ -22,7 +23,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($users as $table)
+                @foreach($fillable as $table)
                 <tr style="text-align: center;">
                     <td>{{ $table->id }}</td>
                     <td>{{ $table->name }}</td>

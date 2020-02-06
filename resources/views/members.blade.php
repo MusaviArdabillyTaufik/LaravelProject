@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@include('layouts.header')
+
 @section('content')
   
   <div class="mx-auto text-center" style="margin-bottom: 22px; margin-top: 22px;">
@@ -20,12 +22,12 @@
                     <td>{{ $tbl->name }}</td>
                     <td>{{ $tbl->nim }}</td>
                     <td>{{ $tbl->faculty }}</td>
-                    <td><a href="#">edit</a><a href="#">delete</a></td>
+                    <td><a href="/editMemberForm/{{ $tbl->id }}">edit</a><a href="/deleteMember/{{ $tbl->id }}">delete</a></td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
-        <a href="#" class="btn btn-primary js-scroll-trigger" style="margin-top: 14px">Join Our Comunity</a>
+        <a href="/addMemberForm" class="btn btn-primary js-scroll-trigger" style="margin-top: 14px">Join Our Comunity</a>
   </div>
  
 @stop

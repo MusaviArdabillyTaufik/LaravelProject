@@ -19,6 +19,14 @@ Route::get('/', function () {
 //     return view('memberslayout');
 // });
 
-Route::get('/member', 'Member@index');
+Route::get('/members', 'Member@index');
 
-// Route::get('/member', 'Member@index');
+Route::get('/addMemberForm', 'Member@addMemberForm');
+
+Route::post('/addMember', 'Member@addMember')->name('add.Member');
+
+Route::get('/editMemberForm/{id}', 'Member@editMemberForm');
+
+Route::post('/editMember/{id}', 'Member@editMember')->name('edit.Member');
+
+Route::get('/deleteMember/{id}', 'Member@deleteMember')->name('delete.Member');

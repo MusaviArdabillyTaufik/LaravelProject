@@ -21,7 +21,7 @@
                         <label class="text-light">Faculty</label>
                         <input type="text" class="form-control" name="faculty" value="{{ $user->faculty }}">
                         <label class="text-light">Avatar</label><br>
-                        <img style="width: 100px; height: 100px; object-fit: cover; object-position: center;" src="{{url('uploads/'.$user->filename)}}" alt="{{$user->filename}}">
+                        <img class="img-edit" src="{{url('uploads/'.$user->filename)}}" alt="{{$user->filename}}">
                         <input type="file" name="avatar">
                     </div>
                     <center>

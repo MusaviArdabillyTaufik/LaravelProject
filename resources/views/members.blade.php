@@ -24,7 +24,7 @@
                 <!-- <td>{{ $tbl->id }}</td> -->
                 <td>{{ $no }}</td>
                 <td>
-                    <img style="width: 30px; height: 30px; object-fit: cover; object-position: center;" class="card-img-top" src="{{url('uploads/'.$tbl->filename)}}" alt="{{$tbl->filename}}">&nbsp;&nbsp;{{ $tbl->name }}
+                    <img class="card-img-top img-table" src="{{url('uploads/'.$tbl->filename)}}" alt="{{$tbl->filename}}">&nbsp;&nbsp;{{ $tbl->name }}
                 </td>
                 <td>{{ $tbl->nim }}</td>
                 <td>{{ $tbl->faculty }}</td>

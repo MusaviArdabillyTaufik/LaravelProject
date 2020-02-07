@@ -4,30 +4,35 @@
 
 @section('content')
   
-  <div class="mx-auto text-center" style="margin-bottom: 22px; margin-top: 22px;">
-    <table class="table table-dark" align="center" border="1" style="width: 90%; margin-top: 7px;">
-            <thead>
-                <tr style="text-align: center;">
-                    <th width="80px">Id</th>
-                    <th width="150px">Name</th>
-                    <th width="200px">NIM</th>
-                    <th width="200px">Faculty</th>
-                    <th width="100px">Edit/Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($member as $tbl)
-                <tr style="text-align: center;">
-                    <td>{{ $tbl->id }}</td>
-                    <td>{{ $tbl->name }}</td>
-                    <td>{{ $tbl->nim }}</td>
-                    <td>{{ $tbl->faculty }}</td>
-                    <td><a href="/editMemberForm/{{ $tbl->id }}">edit</a><a href="/deleteMember/{{ $tbl->id }}">delete</a></td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-        <a href="/addMemberForm" class="btn btn-primary js-scroll-trigger" style="margin-top: 14px">Join Our Comunity</a>
-  </div>
+<div class="mx-auto text-center masthead" style="padding-bottom: 22px; padding-top: 42px;">
+    <table class="table table-dark" align="center" style="width: 90%; margin-top: 7px;">
+        <a href="/addMemberForm" class="btn btn-primary js-scroll-trigger" style="margin-top: 14px; margin-bottom: 22px;">Join Our Comunity</a>
+        <thead>
+            <tr>
+                <th width="80px">No</th>
+                <th width="150px">Name</th>
+                <th width="200px">NIM</th>
+                <th width="200px">Faculty</th>
+                <th width="100px"style="text-align: center;">Edit/Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php $no =0;?>
+            @foreach($member as $tbl)
+            <?php $no++;?>
+            <tr>
+                <!-- <td>{{ $tbl->id }}</td> -->
+                <td>{{ $no }}</td>
+                <td>
+                    <img style="width: 30px; height: 30px; object-fit: cover; object-position: center;" class="card-img-top" src="{{url('uploads/'.$tbl->filename)}}" alt="{{$tbl->filename}}">&nbsp;&nbsp;{{ $tbl->name }}
+                </td>
+                <td>{{ $tbl->nim }}</td>
+                <td>{{ $tbl->faculty }}</td>
+                <td style="text-align: center;"><a href="/editMemberForm/{{ $tbl->id }}">edit</a> - <a href="/deleteMember/{{ $tbl->id }}">delete</a></td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
  
 @stop

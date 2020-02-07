@@ -54,7 +54,7 @@
     <div class="container d-flex h-100 align-items-center">
       <div class="mx-auto text-center">
         <h1 class="mx-auto my-0 ">RedAlert</h1>
-        <h2 class="text-white-50 mx-auto mt-2 mb-5">Code for fun. Code for money. Code for future</h2>
+        <h2 class="text-white-50 mx-auto mt-2 mb-5">Game for fun. Game for money. Game for future</h2>
         <a href="/members" class="btn btn-primary js-scroll-trigger">Join Our Comunity</a>
       </div>
     </div>

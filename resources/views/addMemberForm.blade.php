@@ -20,7 +20,7 @@
                         <label class="text-light">Faculty</label>
                         <input type="text" class="form-control" name="faculty"><br>
                         <label class="text-light">Avatar</label><br>
-                        <input type="file" name="avatar">
+                        <input type="file" name="avatar" accept=".jpg, .png">
                     </div>
                     <center>
                         <input type="submit" class="btn btn-primary text-center " value="Join Our Comunity" style="margin-top: 32px;">

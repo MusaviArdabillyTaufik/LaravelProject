@@ -22,7 +22,7 @@
                         <input type="text" class="form-control" name="faculty" value="{{ $user->faculty }}">
                         <label class="text-light">Avatar</label><br>
                         <img class="img-edit" src="{{url('uploads/'.$user->filename)}}" alt="{{$user->filename}}">
-                        <input type="file" name="avatar">
+                        <input type="file" name="avatar" accept=".jpg, .png">
                     </div>
                     <center>
                         <input type="submit" class="btn btn-primary text-center " value="Save" style="margin-top: 32px;">

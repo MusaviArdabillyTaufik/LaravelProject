@@ -30,3 +30,5 @@ Route::get('/editMemberForm/{id}', 'Member@editMemberForm');
 Route::post('/editMember/{id}', 'Member@editMember')->name('edit.Member');
 
 Route::get('/deleteMember/{id}', 'Member@deleteMember')->name('delete.Member');
+
+Route::get('/search', 'Member@search');

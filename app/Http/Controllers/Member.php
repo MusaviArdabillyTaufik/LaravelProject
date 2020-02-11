@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Input;
 use App\Users;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Auth;
 // use DB;
 
 class Member extends Controller
@@ -16,6 +18,8 @@ class Member extends Controller
     public function index(){
     	$table = 'users';
     	$showmember = Users::all();
+        $showmember = Users::paginate(5);
+        // $showmember = Users::where('id', Auth:: id())->paginate(5);
     	return view('members')->with('member', $showmember);
 
     	// return view ('members', compact('table', 'fillable'));
@@ -93,5 +97,12 @@ class Member extends Controller
         return redirect('/members');
     }
 
-
+    public function search(Request $request){
+      $search = Users::when($request->searchInput, function ($query) use ($request) {
+                $query->where('name', 'LIKE', "%{$request->searchInput}%")
+                      ->orWhere('nim', 'LIKE', "%{$request->searchInput}%")
+                      ->orWhere('faculty', 'LIKE', "%{$request->searchInput}%");
+                })->paginate(5);
+      return view('/members')->with('member', ($search));
+   }
 }

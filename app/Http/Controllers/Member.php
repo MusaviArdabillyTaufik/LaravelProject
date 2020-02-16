@@ -18,7 +18,7 @@ class Member extends Controller
     public function index(){
     	$table = 'users';
     	$showmember = Users::all();
-        $showmember = Users::paginate(5);
+        $showmember = Users::paginate(15);
         // $showmember = Users::where('id', Auth:: id())->paginate(5);
     	return view('members')->with('member', $showmember);
 

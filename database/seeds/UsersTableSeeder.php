@@ -31,3 +31,4 @@ class UsersTableSeeder extends Seeder
         }
     }
 }
+ 

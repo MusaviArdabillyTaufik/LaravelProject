@@ -16,13 +16,13 @@
                         <input type="hidden" name="id" value="{{ $user->id }}">
                         <label class="text-light">Name</label>
                         <input type="text" class="form-control" name="name" value="{{ $user->name }}">
-                        <label class="text-light">NIM</label>
-                        <input type="text" class="form-control" name="nim" value="{{ $user->nim }}">
-                        <label class="text-light">Faculty</label>
-                        <input type="text" class="form-control" name="faculty" value="{{ $user->faculty }}">
+                        <label class="text-light">Code</label>
+                        <input type="text" class="form-control" name="code" value="{{ $user->code }}">
+                        <label class="text-light">Rank</label>
+                        <input type="text" class="form-control" name="rank" value="{{ $user->rank }}">
                         <label class="text-light">Avatar</label><br>
-                        <img class="img-edit" src="{{url('uploads/'.$user->filename)}}" alt="{{$user->filename}}">
-                        <input type="file" name="avatar" accept=".jpg, .png">
+                        <img class="img-edit" src="{{url('uploads/'.$user->avatar)}}" alt="{{$user->avatar}}">
+                        <input type="file" name="avatarinput" accept=".jpg, .png">
                     </div>
                     <center>
                         <input type="submit" class="btn btn-primary text-center " value="Save" style="margin-top: 32px;">

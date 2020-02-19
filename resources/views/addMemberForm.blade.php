@@ -15,12 +15,12 @@
                         
                         <label class="text-light">Name</label>
                         <input type="text" class="form-control" name="name"><br>
-                        <label class="text-light">NIM</label>
-                        <input type="text" class="form-control" name="nim"><br>
-                        <label class="text-light">Faculty</label>
-                        <input type="text" class="form-control" name="faculty"><br>
+                        <label class="text-light">Code</label>
+                        <input type="text" class="form-control" name="code"><br>
+                        <label class="text-light">Rank</label>
+                        <input type="text" class="form-control" name="rank"><br>
                         <label class="text-light">Avatar</label><br>
-                        <input type="file" name="avatar" accept=".jpg, .png">
+                        <input type="file" name="avatarinput" accept=".jpg, .png">
                     </div>
                     <center>
                         <input type="submit" class="btn btn-primary text-center " value="Join Our Comunity" style="margin-top: 32px;">

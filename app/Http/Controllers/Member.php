@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 // use Illuminate\Support\Facades\DB;
 use App\Users;
+use App\Members;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -16,9 +17,12 @@ use Illuminate\Support\Facades\Auth;
 class Member extends Controller
 {
     public function index(){
-    	$table = 'users';
-    	$showmember = Users::all();
-        $showmember = Users::paginate(15);
+        // $table = 'users';
+    	// $showmember = Users::all();
+     //    $showmember = Users::paginate(15);
+        $table = 'members';
+        $showmember = Members::all();
+        $showmember = Members::paginate(15);
         // $showmember = Users::where('id', Auth:: id())->paginate(5);
     	return view('members')->with('member', $showmember);
 
@@ -37,23 +41,23 @@ class Member extends Controller
         // dd($request->all());
         $this->validate($request,[
             'name' => 'required',
-            'nim' => 'required',
-            'faculty' => 'required',
-            'avatar' => 'required|image|mimes:jpeg,png,jpg|max:2048']);
-        $ava = $request->file('avatar');
+            'code' => 'required',
+            'rank' => 'required',
+            'avatarinput' => 'required|image|mimes:jpeg,png,jpg|max:2048']);
+        $ava = $request->file('avatarinput');
         $extension = $ava->getClientOriginalExtension();
         Storage::disk('public')->put($ava->getFilename().'.'.$extension,  File::get($ava));
-        Users::create([
+        Members::create([
             'name' => $request->name,
-            'nim' => $request->nim,
-            'faculty' => $request->faculty,
-            'filename' => $ava->getFilename().'.'.$extension ]);
+            'code' => $request->code,
+            'rank' => $request->rank,
+            'avatar' => $ava->getFilename().'.'.$extension ]);
 
         return redirect('/members');
     }
 
     public function editMemberForm($id){
-        $user = Users::find($id);
+        $user = Members::find($id);
         return view('editMemberForm', ['user' => $user]);
     }
 
@@ -62,13 +66,13 @@ class Member extends Controller
         // dd($path);
         $this->validate($request,[
            'name' => 'required',
-           'nim' => 'required',
-           'faculty' => 'required',
-           'avatar' => 'required|image|mimes:jpeg,png,jpg|max:2048']);
+           'code' => 'required',
+           'rank' => 'required',
+           'avatarinput' => 'required|image|mimes:jpeg,png,jpg|max:2048']);
 
-        $user = Users::find($id);
-        if ($ava = $request->file('avatar')){
-            $uploaded_ava = public_path("uploads/{$user->filename}"); // get image from folder
+        $user = Members::find($id);
+        if ($ava = $request->file('avatarinput')){
+            $uploaded_ava = public_path("uploads/{$user->avatar}"); // get image from folder
 
             if (File::exists($uploaded_ava)) { // remove image from folder
                 unlink($uploaded_ava);
@@ -76,12 +80,12 @@ class Member extends Controller
             $destinationPath = 'uploads/'; // upload path
             $user_avatar = date('YmdHis') . "." . $ava->getClientOriginalExtension();
             $ava->move($destinationPath, $user_avatar);
-            $insert['filename'] = "$user_avatar";
+            $insert['avatar'] = "$user_avatar";
 
             $user->name = $request->name;
-            $user->nim = $request->nim;
-            $user->faculty = $request->faculty;
-            $user->filename = $insert['filename'] = "$user_avatar";
+            $user->code = $request->code;
+            $user->rank = $request->rank;
+            $user->avatar = $insert['avatar'] = "$user_avatar";
         }
             $user->save();
         return redirect('/members');
@@ -89,19 +93,19 @@ class Member extends Controller
 
     public function deleteMember($id)
     {   
-        $avatar = Users::where('id',$id)->first();
-        File::delete('uploads/'.$avatar->filename);
+        $deleteavatar = Members::where('id',$id)->first();
+        File::delete('uploads/'.$deleteavatar->avatar);
 
-        $user = Users::find($id);
+        $user = Members::find($id);
         $user->delete();
         return redirect('/members');
     }
 
     public function search(Request $request){
-      $search = Users::when($request->searchInput, function ($query) use ($request) {
+      $search = Members::when($request->searchInput, function ($query) use ($request) {
                 $query->where('name', 'LIKE', "%{$request->searchInput}%")
-                      ->orWhere('nim', 'LIKE', "%{$request->searchInput}%")
-                      ->orWhere('faculty', 'LIKE', "%{$request->searchInput}%");
+                      ->orWhere('code', 'LIKE', "%{$request->searchInput}%")
+                      ->orWhere('rank', 'LIKE', "%{$request->searchInput}%");
                 })->paginate(5);
       return view('/members')->with('member', ($search));
    }

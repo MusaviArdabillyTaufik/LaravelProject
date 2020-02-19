@@ -12,7 +12,7 @@
             <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Cari</button>
         </form>
         <thead>
-            <tr><!-- 
+            <!-- <tr>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -23,8 +23,8 @@
             <tr>
                 <th width="80px">No</th>
                 <th width="150px">Name</th>
-                <th width="200px">NIM</th>
-                <th width="200px">Faculty</th>
+                <th width="200px">Code</th>
+                <th width="200px">Rank</th>
                 <th width="100px"style="text-align: center;">Edit/Delete</th>
             </tr>
         </thead>
@@ -36,10 +36,10 @@
                 <!-- <td>{{ $no }}</td> -->
                 <td><?php echo $no++;?></td>
                 <td>
-                    <img class="card-img-top img-table" src="{{url('uploads/'.$tbl->filename)}}" alt="{{$tbl->filename}}">&nbsp;&nbsp;{{ $tbl->name }}
+                    <img class="card-img-top img-table" src="{{url('uploads/'.$tbl->avatar)}}" alt="{{$tbl->avatar}}">&nbsp;&nbsp;{{ $tbl->name }}
                 </td>
-                <td>{{ $tbl->nim }}</td>
-                <td>{{ $tbl->faculty }}</td>
+                <td>{{ $tbl->code }}</td>
+                <td>{{ $tbl->rank }}</td>
                 <td style="text-align: center;"><a href="/editMemberForm/{{ $tbl->id }}">edit</a> - <a href="/deleteMember/{{ $tbl->id }}">delete</a></td>
             </tr>
             @endforeach
@@ -47,5 +47,5 @@
     </table>
     {{ $member->links() }}
 </div>
- 
+
 @stop

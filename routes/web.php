@@ -19,16 +19,31 @@ Route::get('/', function () {
 //     return view('memberslayout');
 // });
 
-Route::get('/members', 'Member@index');
+Route::get('/loginForm', 'UserController@loginform')->name('loginForm');
 
-Route::get('/addMemberForm', 'Member@addMemberForm');
+Route::post('/login', 'UserController@login')->name('login.user');
 
-Route::post('/addMember', 'Member@addMember')->name('add.Member');
+Route::get('/registerForm', 'UserController@registerForm');
 
-Route::get('/editMemberForm/{id}', 'Member@editMemberForm');
+Route::post('/register', 'UserController@register')->name('register.user');
 
-Route::post('/editMember/{id}', 'Member@editMember')->name('edit.Member');
+Route::get('/logout', 'UserController@logout');
 
-Route::get('/deleteMember/{id}', 'Member@deleteMember')->name('delete.Member');
 
-Route::get('/search', 'Member@search');
+Route::group(['middleware' => 'auth'], function(){
+
+	Route::get('/members', 'Member@index');
+
+	Route::get('/addMemberForm', 'Member@addMemberForm');
+
+	Route::post('/addMember', 'Member@addMember')->name('add.Member');
+
+	Route::get('/editMemberForm/{id}', 'Member@editMemberForm');
+
+	Route::post('/editMember/{id}', 'Member@editMember')->name('edit.Member');
+
+	Route::get('/deleteMember/{id}', 'Member@deleteMember')->name('delete.Member');
+
+	Route::get('/search', 'Member@search');
+});
+

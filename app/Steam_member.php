@@ -3,14 +3,15 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Members;
 
 class Steam_member extends Model
 {
     protected $table = "steam_member";
 
-    protected $fillable = ['users_id', 'steam_name', 'steam_id'];
+    protected $fillable = ['member_id', 'steam_name', 'steam_id'];
 
-    public function users() {
-    	return $this->belongsTo('App\Users');
+    public function members() {
+    	return $this->belongsTo('App\Members', 'member_id', 'id');
     }
 }

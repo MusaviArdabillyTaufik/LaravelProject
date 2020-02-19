@@ -43,7 +43,10 @@
             <a class="nav-link js-scroll-trigger" href="#projects">Team</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#signup">Login</a>
+            <a class="nav-link js-scroll-trigger" href="/loginForm">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="/logout">Logout</a>
           </li>
         </ul>
       </div>

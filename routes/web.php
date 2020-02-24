@@ -11,12 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+
+Route::get('/', 'Member@landingPage');
+
+// Route::get('/', function () {
+//     return view('index');
+// });
 
 // Route::get('/member', function () {
-//     return view('memberslayout');
+// return view('memberslayout');
 // });
 
 Route::get('/loginForm', 'UserController@loginform')->name('loginForm');

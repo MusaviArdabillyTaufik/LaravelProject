@@ -36,7 +36,7 @@
                 <!-- <td>{{ $no }}</td> -->
                 <td><?php echo $no++;?></td>
                 <td>
-                    <img class="card-img-top img-table" src="{{url('uploads/'.$tbl->avatar)}}" alt="{{$tbl->avatar}}">&nbsp;&nbsp;{{ $tbl->name }}
+                    <img class="img-table" src="{{url('uploads/'.$tbl->avatar)}}" alt="{{$tbl->avatar}}">&nbsp;&nbsp;{{ $tbl->name }}
                 </td>
                 <td>{{ $tbl->code }}</td>
                 <td>{{ $tbl->rank }}</td>

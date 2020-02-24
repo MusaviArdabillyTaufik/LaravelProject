@@ -17,9 +17,10 @@
   <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
   <link href="{{ asset('https://fonts.googleapis.com/css?family=Varela+Round') }}" rel="stylesheet">
   <link href="{{ asset('https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i') }}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700&display=swap" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="{{ asset('css/grayscale.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/grayscale.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css') }}">
 
 </head>
@@ -36,12 +37,6 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#projects">Team</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="/loginForm">Login</a>
           </li>

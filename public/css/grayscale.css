@@ -4,24 +4,103 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-grayscale/blob/master/LICENSE)
  */
 
-.bgmain{
+.csgot1{
+  margin-left: 300px;
+  color: #ffffff;
+}
+.csgot2{
+  margin-left: 200px;
+  color: #ffffff;
+}
+
+.pubgt1{
+  margin-left: 1200px;
+}
+.pubgt2{
+  margin-left: 1200px;
+}
+
+.btn-game-index{
+  width: 220px; height: 200px;
+}
+
+.home-icon{
+  margin-top: 250px;
+  position: relative;
+  display: inline-block;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.home-icon h3 {
+  font-family: 'Open Sans Condensed';
+  font-size: 2rem;
+  line-height: 2.5rem;
+  color: #989fba;
+  padding-top: 20px;
+}
+
+.home-button{
+  position: relative;
+  display: inline-block;
+}
+
+.home-button .home-hover{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.home-button:hover .home-hover{
+  display: inline;
+}
+
+
+.head{
   position:relative;
   width:100%;
   height:100%;
-  min-height:35rem;padding:15rem 0;
+  min-height:35rem;
+  padding:15rem 0;
+}
+
+.bgmain{
   background:url(../assets/img/bgmain.jpg);
-  background-position:center;background-repeat:no-repeat;background-attachment:fixed;background-size:cover
+  background-repeat:no-repeat;background-attachment:fixed;background-size:cover
+}
+
+.bgcsgo{
+  background:url(../assets/img/bgcsgo.jpg);
+  background-repeat:no-repeat;background-attachment:scroll;background-size:cover
+}
+
+.bgpubg{
+  background:url(../assets/img/bgpubg.jpg);
+  background-repeat:no-repeat;background-attachment:scroll;background-size:cover
 }
 
 .img-table{width: 30px; height: 30px; object-fit: cover; object-position: center;}
 
 .img-edit{width: 150px; height: 150px; object-fit: cover; object-position: center;}
 
-.bgmain h1 {
+.head h1 {
   font-family: 'Open Sans Condensed';
   font-size: 3.5rem;
   line-height: 2.5rem;
-  color: #ffffff;
+  color: #cacfe3;
+  /*letter-spacing: 0.8rem;
+  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;*/
+}
+
+.head h2 {
+  font-family: 'Open Sans Condensed';
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  color: #989fba;
   /*letter-spacing: 0.8rem;
   background: -webkit-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
   -webkit-text-fill-color: transparent;
@@ -29,11 +108,23 @@
 }
 
 .btn-home{
-  margin-top: 125px;
+  margin-top: 100px;
+  margin-bottom: 40px;
   width: 300px;
   height: auto;
   color: #000000;
   background-color: #FFFFFF;
+  font-weight: bold;
+  font-family: 'Open Sans Condensed';
+}
+
+.btn-csgo{
+  margin-top: 100px;
+  margin-bottom: 40px;
+  width: 300px;
+  height: auto;
+  color: #000000;
+  background-color: #007eff;
   font-weight: bold;
   font-family: 'Open Sans Condensed';
 }
@@ -183,12 +274,12 @@
 
 .btn {
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
-  padding: 1.25rem 2rem;
-  font-family: 'Varela Round';
+  padding: 1rem 2rem;
+  /*font-family: 'Varela Round';
   font-size: 80%;
   text-transform: uppercase;
   letter-spacing: .15rem;
-  border: 0;
+*/  border: 0;
 }
 
 .btn-primary {
@@ -339,5 +430,5 @@ a:focus, a:hover {
 }
 
 footer {
-  padding: 5rem 0;
+  padding: 2rem 0;
 }

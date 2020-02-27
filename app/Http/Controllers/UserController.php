@@ -8,9 +8,9 @@ use Auth;
 
 class UserController extends Controller
 {
-    public function loginform(){
-    	return view('loginForm');
-    }
+    // public function loginform(){
+    // 	return view('loginForm');
+    // }
 
     public function login(Request $request){
     	if (Auth::attempt($request->only('email','password'))) {
@@ -20,14 +20,14 @@ class UserController extends Controller
     	return redirect('/loginForm')->with('login_failed','Invalid email or password');
     }
 
- //    public function register() {
+ 	//  public function register() {
 	// 	$user = User::all();
 	// 	return view('createLog', compact('user'));
 	// }
 
-	public function registerForm(){
-    	return view('registerForm');
-    }
+	// public function registerForm(){
+ 	//    return view('registerForm');
+ 	// }
 
 	public function register(Request $request) {
 		$this->validate($request, [

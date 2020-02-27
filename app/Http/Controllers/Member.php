@@ -16,26 +16,45 @@ use Illuminate\Support\Facades\Auth;
 
 class Member extends Controller
 {
+
     public function index(){
+
+    // public function landingPage(){
+    //     $table = 'members';
+    //     $showmember = Members::all();
+    //     return view('index', compact('showmember'));
+    // }
+
+    public function index(Request $request){
+      $showmember = Members::when($request->searchInput, function ($query) use ($request) {
+                $query->where('name', 'LIKE', "%{$request->searchInput}%")
+                      ->orWhere('code', 'LIKE', "%{$request->searchInput}%")
+                      ->orWhere('rank', 'LIKE', "%{$request->searchInput}%");
+                })->paginate(5);
+      return view('members')->with('member', ($showmember));
+   }
+    
+                    // public function index(){
+
         // $table = 'users';
     	// $showmember = Users::all();
      //    $showmember = Users::paginate(15);
-        $table = 'members';
-        $showmember = Members::all();
-        $showmember = Members::paginate(15);
+                        // $table = 'members';
+                        // $showmember = Members::all();
+                        // $showmember = Members::paginate(15);
         // $showmember = Users::where('id', Auth:: id())->paginate(5);
-    	return view('members')->with('member', $showmember);
+    	               // return view('members')->with('member', $showmember);
 
     	// return view ('members', compact('table', 'fillable'));
 
         // $members = DB::table('users')->get();
         // // dump($members);
         // return view('members', ['users' => $members]);
-    }
+    // }
 
-    public function addMemberForm(){
-        return view('addMemberForm');
-    }
+    // public function addMemberForm(){
+    //     return view('addMemberForm');
+    // }
 
     public function addMember(Request $request){
         // dd($request->all());
@@ -56,10 +75,10 @@ class Member extends Controller
         return redirect('/members');
     }
 
-    public function editMemberForm($id){
-        $user = Members::find($id);
-        return view('editMemberForm', ['user' => $user]);
-    }
+    // public function editMemberForm($id){
+    //     $user = Members::find($id);
+    //     return view('editMemberForm', ['user' => $user]);
+    // }
 
     public function editMember($id, Request $request){
         // dd($request->all());
@@ -101,12 +120,12 @@ class Member extends Controller
         return redirect('/members');
     }
 
-    public function search(Request $request){
-      $search = Members::when($request->searchInput, function ($query) use ($request) {
-                $query->where('name', 'LIKE', "%{$request->searchInput}%")
-                      ->orWhere('code', 'LIKE', "%{$request->searchInput}%")
-                      ->orWhere('rank', 'LIKE', "%{$request->searchInput}%");
-                })->paginate(5);
-      return view('/members')->with('member', ($search));
-   }
+   //  public function search(Request $request){
+   //    $search = Members::when($request->searchInput, function ($query) use ($request) {
+   //              $query->where('name', 'LIKE', "%{$request->searchInput}%")
+   //                    ->orWhere('code', 'LIKE', "%{$request->searchInput}%")
+   //                    ->orWhere('rank', 'LIKE', "%{$request->searchInput}%");
+   //              })->paginate(5);
+   //    return view('/members')->with('member', ($search));
+   // }
 }

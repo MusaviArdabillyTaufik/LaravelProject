@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Auth;
 class Member extends Controller
 {
 
-    public function index(){
+    // public function index(){
 
     // public function landingPage(){
     //     $table = 'members';

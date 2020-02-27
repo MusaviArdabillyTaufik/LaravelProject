@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Auth;
 
 class Member extends Controller
 {
+    public function landingPage(){
+        $table = 'members';
+        $showmember = Members::all();
+        return view('index', compact('showmember'));
+    }
     public function index(){
         // $table = 'users';
     	// $showmember = Users::all();

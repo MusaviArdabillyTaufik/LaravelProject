@@ -46,6 +46,8 @@ Route::group(['middleware' => 'auth'], function(){
 
 	Route::get('/members', 'Member@index');
 
+	Route::get('/members/export', 'Member@export');
+
 	Route::get('/addMemberForm', 'PageController@addMemberForm');
 
 	Route::post('/addMember', 'Member@addMember')->name('add.Member');

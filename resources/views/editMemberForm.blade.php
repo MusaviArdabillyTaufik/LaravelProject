@@ -1,11 +1,10 @@
-@extends('layouts.main')
+@extends('layouts.logged-in')
 
 @section('content')
 
-  <section id="header">
-    <header class="masthead">
+    <div class="bgadmin head">
         <div class="container d-flex h-100 align-items-center">
-            <div class="mx-auto">
+            <div class="mx-auto edit-container">
                 
                 <h1 class="mx-auto my-0 text-center">RedAlert</h1>
                 <h1 class="mx-auto my-0 text-center">Members</h2>
@@ -22,7 +21,7 @@
                         <input type="text" class="form-control" name="rank" value="{{ $user->rank }}">
                         <label class="text-light">Avatar</label><br>
                         <img class="img-edit" src="{{url('uploads/'.$user->avatar)}}" alt="{{$user->avatar}}">
-                        <input type="file" name="avatarinput" accept=".jpg, .png">
+                        <input type="file" name="avatarinput" accept=".jpg, .png" class="input-ava">
                     </div>
                     <center>
                         <input type="submit" class="btn btn-primary text-center " value="Save" style="margin-top: 32px;">
@@ -30,7 +29,6 @@
                 </form>
             </div>
         </div>
-    </header>
-</section>
+    </div>
  
 @stop

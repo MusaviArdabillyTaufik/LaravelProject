@@ -1,42 +1,41 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="masthead">
-  <div class="container d-flex h-100 align-items-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-          <div class="card card-signin my-5">
-            <div class="card-body">
-              <h5 class="card-title text-center">Sign Up</h5>
+<div class="register-container">
+  <div class="register-wraper">
+    <div class="register-form">
+      <h1>Registration</h1>
 
-              <form class="form-signin" method="POST" action="{{ url('/register') }}" autocomplete="off">
-                {{ csrf_field() }}
-                <div class="form-label-group">
-                  <input type="text" id="inputName" class="form-control" name="name" placeholder="username" required autofocus>
-                  <label for="inputName">name</label>
-                </div>
-
-                <div class="form-label-group">
-                  <input type="text" id="inputEmail" class="form-control" name="email" placeholder="Email address" required autofocus>
-                  <label for="inputEmail">Email address</label>
-                </div>
-
-                <div class="form-label-group">
-                  <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
-                  <label for="inputPassword">Password</label>
-                </div>
-
-                <div class="custom-control custom-checkbox mb-3">
-                  <input type="checkbox" class="custom-control-input" id="customCheck1">
-                  <label class="custom-control-label" for="customCheck1">Remember password</label>
-                </div>
-                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign up</button>
-              </form>
-            </div>
+      @if ($message = Session::get('login_failed'))
+        <center>
+          <div class="alert alert-danger col-lg-8">
+            <center><p>{{ $message }}</p></center>
           </div>
+        </center>
+      @endif
+
+      <form class="form-signin" method="POST" action="{{ url('/register') }}" autocomplete="off">
+        {{ csrf_field() }}
+        <div class="form-label-group" style="margin-bottom: 32px;">
+          <input type="text" id="inputEmail" class="form-control" name="name" placeholder="Username" required autofocus>
+          <!-- <label for="inputEmail">Email address</label> -->
         </div>
-      </div>
+
+        <div class="form-label-group" style="margin-bottom: 32px;">
+          <input type="text" id="inputEmail" class="form-control" name="email" placeholder="Email address" required autofocus>
+          <!-- <label for="inputEmail">Email address</label> -->
+        </div>
+
+        <div class="form-label-group" style="margin-bottom: 42px;">
+          <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
+          <!-- <label for="inputPassword">Password</label> -->
+        </div>
+
+        <button class="btn btn-md btn-primary btn-block" type="submit">Register</button><br><hr><br>
+        <div class="text-center">
+          <label>Already have an account</label>&nbsp;&nbsp;&nbsp;<a href="/loginForm">Login</a>
+        </div>
+      </form>
     </div>
   </div>
 </div>

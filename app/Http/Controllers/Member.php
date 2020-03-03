@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
+use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
-// use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Pagination\LengthAwarePaginator;
+use App\Exports\MembersExport;
 use App\Users;
 use App\Members;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\File;
-use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Facades\Auth;
-// use DB;
 
 class Member extends Controller
 {
@@ -128,4 +128,8 @@ class Member extends Controller
    //              })->paginate(5);
    //    return view('/members')->with('member', ($search));
    // }
+
+    public function export(){
+        return Excel::download(new MembersExport, 'Members.xlsx');
+    }
 }

@@ -4,6 +4,153 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-grayscale/blob/master/LICENSE)
  */
 
+
+  /*background*/
+ .bgmain{
+  background:url(../assets/img/bgmain.jpg);
+  background-repeat:no-repeat;background-attachment:fixed;background-size:cover
+}
+
+ .bgcsgo{
+  background:url(../assets/img/bgcsgo.jpg);
+  background-repeat:no-repeat;background-attachment:scroll;background-size:cover
+}
+
+ .bgpubg{
+  background:url(../assets/img/bgpubg.jpg);
+  background-repeat:no-repeat;background-attachment:scroll;background-size:cover
+}
+ .bgadmin{
+  background:url(../assets/img/bgadmin.jpg);
+  background-repeat:no-repeat;background-attachment:scroll;background-size:cover
+ }
+
+
+  /*edit form*/
+ .edit-container{
+  background: rgba(58, 54, 54, 0.5);
+  padding: 22px;
+  border-radius: 5px;
+  box-shadow: 5px 10px 18px #000;
+ }
+
+
+  /*export*/
+ .export{
+  float: left;
+ }
+ .export a{
+  border-style: none;
+  border-radius: 4px;
+  background: #4c5a64;
+  color: #ffffff;
+  padding: 5px;
+ }
+ .export a:hover{
+  color: #000;
+ }
+
+
+  /*search form*/
+ .search-form{
+  width: 400px;
+  float: right;
+  margin-bottom: 20px;
+ }
+ .search-form input[type=text] {
+  border-style: none;
+  border-radius: 4px;
+ }
+ .search-form button {
+  border-style: none;
+  border-radius: 4px;
+  background: #4c5a64;
+  color: #ffffff;
+ }
+ .search-form button:hover {
+  color: #000;
+ }
+
+
+  /*register form*/
+ .register-container {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.3) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url(../assets/img/bgmain.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+ .register-wraper{
+  height: 100%;
+  color: #fff;
+  padding-top: 290px;
+  padding-bottom: 192px;
+ }
+ .register-form{
+  margin: auto;
+  width: 400px;
+  background-color: #24273c;
+  color: #FFFFFF;
+  padding: 22px;
+  border-radius: 5px;
+ }
+ .register-form h1{
+  font-family: 'Trade Winds', ;
+  font-weight: bold;
+  margin-bottom: 50px;
+ }
+ .register-form hr{
+  display: block; height: 1px;
+    border: 0; border-top: 1px solid #ccc;
+    margin: 1em 0; padding: 0; 
+ }
+
+
+ /*Login form*/
+ .login-container {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.3) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url(../assets/img/bgmain.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+ .login-wraper{
+  height: 100%;
+  color: #fff;
+  padding-top: 270px;
+  padding-bottom: 192px;
+ }
+ .login-form{
+  margin: auto;
+  width: 400px;
+  background-color: #24273c;
+  color: #FFFFFF;
+  padding: 22px;
+  border-radius: 5px;
+ }
+ .login-form h1{
+  font-family: 'Trade Winds', ;
+  font-weight: bold;
+  margin-bottom: 50px;
+ }
+ .login-form hr{
+  display: block; height: 1px;
+    border: 0; border-top: 1px solid #ccc;
+    margin: 1em 0; padding: 0; 
+ }
+
+
+.input-ava{
+  color: #fff;
+  background: rgba(58, 54, 54, 0.5);
+  border-style: none;
+  border-radius: 4px;
+ }
+
 .csgot1{
   margin-left: 300px;
   color: #ffffff;
@@ -57,7 +204,7 @@
   display: inline;
 }
 
-
+ /*heading*/
 .head{
   position:relative;
   width:100%;
@@ -65,25 +212,6 @@
   min-height:35rem;
   padding:15rem 0;
 }
-
-.bgmain{
-  background:url(../assets/img/bgmain.jpg);
-  background-repeat:no-repeat;background-attachment:fixed;background-size:cover
-}
-
-.bgcsgo{
-  background:url(../assets/img/bgcsgo.jpg);
-  background-repeat:no-repeat;background-attachment:scroll;background-size:cover
-}
-
-.bgpubg{
-  background:url(../assets/img/bgpubg.jpg);
-  background-repeat:no-repeat;background-attachment:scroll;background-size:cover
-}
-
-.img-table{width: 30px; height: 30px; object-fit: cover; object-position: center;}
-
-.img-edit{width: 150px; height: 150px; object-fit: cover; object-position: center;}
 
 .head h1 {
   font-family: 'Open Sans Condensed';
@@ -106,6 +234,12 @@
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;*/
 }
+
+ /*sizing image*/
+.img-table{width: 30px; height: 30px; object-fit: cover; object-position: center;}
+
+.img-edit{width: 150px; height: 150px; object-fit: cover; object-position: center;}
+
 
 .btn-home{
   margin-top: 100px;
@@ -139,7 +273,7 @@
 }
 
 
-
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 #mainNav {
   min-height: 56px;

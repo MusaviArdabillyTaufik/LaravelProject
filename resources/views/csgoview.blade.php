@@ -12,7 +12,7 @@
     </div>
     <div class=" d-flex h-100 align-items-center">
       <div class="mx-auto text-center">
-        <a href="/members" class="btn js-scroll-trigger btn-csgo">JOIN</a><br>
+        <a href="/members" class="btn btn-csgo">JOIN NOW</a><br>
       </div>
     </div>
   </div>

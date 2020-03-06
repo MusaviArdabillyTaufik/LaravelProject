@@ -10,12 +10,12 @@
         <h1 class="mx-auto my-0 text-center">Members</h2>
     </div>
     <div class="container">
-        <table class="table table-dark" align="center" style="width: 100%; margin-top: 7px;">
+        <table class="table table-dark table-members" align="center" style="width: 100%; margin-top: 7px;">
             <div>
                 <a href="/addMemberForm" class="btn btn-primary js-scroll-trigger" style="margin-top: 14px; margin-bottom: 22px;">Join Our Comunity</a>
             </div>
             <div class="export">
-                <a href="/members/export">Export</a>
+                <a href="{{ url('/members/export') }}">Export</a>
             </div>
             <div class="search-form">
                 <form class="" method="get" action="{{url('search')}}">

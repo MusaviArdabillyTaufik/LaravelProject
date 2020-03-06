@@ -4,6 +4,18 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-grayscale/blob/master/LICENSE)
  */
 
+  /*table-members*/
+  .table-members{
+  background: rgba(58, 54, 54, 0.5);
+  box-shadow: 5px 10px 18px #000;
+  }
+
+  /*navbar*/
+  .nav-container{
+    width: 85%;
+    justify-content:   
+}
+
 
   /*background*/
  .bgmain{
@@ -53,7 +65,6 @@
 
   /*search form*/
  .search-form{
-  width: 400px;
   float: right;
   margin-bottom: 20px;
  }
@@ -253,14 +264,31 @@
 }
 
 .btn-csgo{
-  margin-top: 100px;
+  margin-top: 410px;
   margin-bottom: 40px;
   width: 300px;
   height: auto;
-  color: #000000;
+  color: #FFFFFF;
   background-color: #007eff;
   font-weight: bold;
   font-family: 'Open Sans Condensed';
+  font-size: 16px;
+  line-height: 16px;
+  padding: 10px 150px;
+}
+
+.btn-pubg{
+  margin-top: 250px;
+  margin-bottom: 60px;
+  width: 300px;
+  height: auto;
+  color: #FFFFFF;
+  background-color: #5f5658;
+  font-weight: bold;
+  font-family: 'Open Sans Condensed';
+  font-size: 16px;
+  line-height: 16px;
+  padding: 10px 150px;
 }
 
 .btn-home:hover {

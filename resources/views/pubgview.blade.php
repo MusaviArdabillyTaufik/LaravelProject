@@ -12,7 +12,7 @@
     </div>
     <div class=" d-flex h-100 align-items-center">
       <div class="mx-auto text-center">
-        <a href="/members" class="btn js-scroll-trigger btn-home">JOIN</a><br>
+        <a href="/members" class="btn btn-pubg">JOIN</a><br>
       </div>
     </div>
   </div>

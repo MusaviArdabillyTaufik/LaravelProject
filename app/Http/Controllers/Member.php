@@ -91,7 +91,7 @@ class Member extends Controller
 
         $user = Members::find($id);
         if ($ava = $request->file('avatarinput')){
-            $uploaded_ava = public_path("uploads/{$user->avatar}"); // get image from folder
+            $uploaded_ava = public_path("uploads\{$user->avatar}"); // get image from folder
 
             if (File::exists($uploaded_ava)) { // remove image from folder
                 unlink($uploaded_ava);

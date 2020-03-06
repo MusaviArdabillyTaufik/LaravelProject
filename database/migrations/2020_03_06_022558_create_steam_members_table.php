@@ -15,14 +15,9 @@ class CreateSteamMembersTable extends Migration
     {
         Schema::create('steam_members', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('member_id')->unsigned();
-            $table->string('steam_name');
-            $table->string('steam_id');
+            $table->string('friend_code')->nullable();
+            $table->string('name');
             $table->timestamps();
-
-            $table->foreign('member_id')->references('id')->on('members')
-                    ->onDelete('restrict')
-                    ->onUpdate('cascade');
         });
     }
 

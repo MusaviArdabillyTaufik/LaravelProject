@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use \App\Steam_member;
+use \App\Members;
 use \App\User;
 use Auth;
 
@@ -29,6 +32,25 @@ class UserController extends Controller
  	//    return view('registerForm');
  	// }
 
+ 	// public function add_steam($nama){
+ 		// Steam_member::create([
+   //      	'name' => $nama
+   //      ]);
+  //       return redirect('/loginForm');
+ 	// }
+
+ 	public function sub_register($id, $nama, $id_steam){
+ 		
+        Members::create([
+        	'name' => $nama,
+        	'id_user' => $id,
+        	'id_steam' => $id_steam
+        ]);
+        // return $this->add_steam($nama);
+		return redirect('/loginForm');
+		// dd($id, $nama);
+	}
+
 	public function register(Request $request) {
 		$this->validate($request, [
 				'name'     => 'required',
@@ -47,9 +69,24 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => bcrypt($request->password)
         ]);
+
+        Steam_member::create([
+        	'name' => $request->name,
+        ]);
+
+        $id_steam = DB::table('steam_members')->where('name', $request->name)->value('id');
+		$id = DB::table('users')->where('name', $request->name)->value('id');
+		$nama = $request->name;
+        
+        // Steam_member::create([
+        // 	'name' => $request->name
+        // ]);
 		// dd($request->all());
-		return redirect('/loginForm');
+		// return redirect('/loginForm');
+		return $this->sub_register($id, $nama, $id_steam);
 	}
+
+	
 
 	public function logout() {
 		Auth::logout();

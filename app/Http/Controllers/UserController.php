@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use \App\Steam_member;
 use \App\Members;
 use \App\User;
+use \App\Csgos;
 use Auth;
 
 class UserController extends Controller
@@ -17,7 +18,7 @@ class UserController extends Controller
 
     public function login(Request $request){
     	if (Auth::attempt($request->only('email','password'))) {
-    		return redirect('/members');
+    		return redirect('/');
     	}
     	//dd('salah');
     	return redirect('/loginForm')->with('login_failed','Invalid email or password');
@@ -39,12 +40,14 @@ class UserController extends Controller
   //       return redirect('/loginForm');
  	// }
 
- 	public function sub_register($id, $nama, $id_steam){
+ 	public function sub_register($id, $nama, $id_steam, $id_csgo){
  		
         Members::create([
-        	'name' => $nama,
+            'name' => $nama,
+            'avatar' => 'defaultava.png',
         	'id_user' => $id,
-        	'id_steam' => $id_steam
+        	'id_steam' => $id_steam,
+        	'id_csgo' => $id_csgo
         ]);
         // return $this->add_steam($nama);
 		return redirect('/loginForm');
@@ -74,7 +77,12 @@ class UserController extends Controller
         	'name' => $request->name,
         ]);
 
+        Csgos::create([
+        	'name' => $request->name
+        ]);
+
         $id_steam = DB::table('steam_members')->where('name', $request->name)->value('id');
+        $id_csgo = DB::table('csgos')->where('name', $request->name)->value('id');
 		$id = DB::table('users')->where('name', $request->name)->value('id');
 		$nama = $request->name;
         
@@ -83,7 +91,7 @@ class UserController extends Controller
         // ]);
 		// dd($request->all());
 		// return redirect('/loginForm');
-		return $this->sub_register($id, $nama, $id_steam);
+		return $this->sub_register($id, $nama, $id_steam, $id_csgo);
 	}
 
 	

@@ -61,7 +61,11 @@ class Member extends Controller
         $this->validate($request,[
             'name' => 'required',
             'code' => 'required',
+            'age' => 'required',
+            'gender' => 'required',
             'rank' => 'required',
+            'language' => 'required',
+            'additional_info' => 'required',
             'avatarinput' => 'required|image|mimes:jpeg,png,jpg|max:2048']);
         $ava = $request->file('avatarinput');
         $extension = $ava->getClientOriginalExtension();
@@ -69,7 +73,11 @@ class Member extends Controller
         Members::create([
             'name' => $request->name,
             'code' => $request->code,
+            'age' => $request->age,
+            'gender' => $request->gender,
             'rank' => $request->rank,
+            'language' => $request->language,
+            'additional_info' => $request->additional_info,
             'avatar' => $ava->getFilename().'.'.$extension ]);
 
         return redirect('/members');
@@ -86,7 +94,11 @@ class Member extends Controller
         $this->validate($request,[
            'name' => 'required',
            'code' => 'required',
+           'age' => 'required',
+           'gender' => 'required',
            'rank' => 'required',
+           'language' => 'required',
+           'additional_info' => 'required',
            'avatarinput' => 'required|image|mimes:jpeg,png,jpg|max:2048']);
 
         $user = Members::find($id);
@@ -103,7 +115,11 @@ class Member extends Controller
 
             $user->name = $request->name;
             $user->code = $request->code;
+            $user->age = $request->age;
+            $user->gender = $request->gender;
             $user->rank = $request->rank;
+            $user->language = $request->language;
+            $user->additional_info = $request->additional_info;
             $user->avatar = $insert['avatar'] = "$user_avatar";
         }
             $user->save();

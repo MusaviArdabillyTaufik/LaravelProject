@@ -4,28 +4,427 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-grayscale/blob/master/LICENSE)
  */
 
+  /*csgo players*/
+  .csgoplayers-container{
+    width: 600px;
+    height: auto;
+    margin: auto;
+    padding: 20px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+  }
+
+  .csgoplayers-wrapper{
+    margin: 0;
+    padding: 0;
+    width: 600px;
+    height: auto;  
+    display: flex;
+    flex-direction: column;
+    color: #fff
+  }
+
+  .csgoplayers-wrapper h2{
+    margin: 0;
+    font-size: 26px;
+    font-family: 'Open Sans Condensed';
+  }
+
+
+  /*edit profile*/
+  .editprofile-container{
+    width: 600px;
+    height: auto;
+    margin: auto;
+    padding-bottom: 20px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    /*box-shadow: 5px 10px 18px #000;*/
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .editprofile-container {
+      width: 380px;
+    }
+  }
+
+
+  .editprofile-container img{
+    margin: -50px auto auto auto;
+    width: 100px; height: 100px; object-fit: cover; object-position: center;border-radius: 50%;
+  }
+
+  .editprofile-container h1{
+    margin-top: 45px;
+    font-size: 24px;
+    font-family: 'Anton', sans-serif;
+  }
+
+  .editprofile-container p{
+    font-size: 12px;
+    font-family: sans-serif;
+    font-weight: lighter;
+    color: #f1f1f1;
+  }
+
+  .editprofile-container h2{
+    margin-top: 10px;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: lighter;
+    color: #f1f1f1;
+  }
+
+  .editprofile-container input{
+    background: transparent;
+    color: #fff;
+    border-color: #31344c;
+    line-height: 25px;
+    padding-left: 10px;
+  }
+
+  .editprofile-container input[type=checkbox]{
+    position: relative;
+    display: inline-block;
+  }
+
+  .editprofile-container input[type=submit]{
+    width: 200px;
+    margin: 40px auto;
+    position: relative;
+    display: inline-block;
+  }
+
+  .editprofile-container select{
+    background: transparent;
+    color: #fff;
+    border-width: 2px;
+    border-top-color: #000;
+    border-left-color: #000;
+    border-bottom-color: #31344c;
+    border-right-color: #31344c;
+    padding: 2px;
+  }
+
+  .editprofile-container option{
+    background: #31344c;
+    color: #fff;
+    border-color: #31344c;
+    line-height: 25px;
+  }
+
+  .editprofile-role-container{
+    display: flex;flex-direction: row;justify-content: space-around;
+  }
+
+  .editprofile-role-wrapper{
+    display: flex;flex-direction: column;
+  }
+
+  .editprofile-container button{
+    width: 500px;
+    margin: 35px auto;
+    color: #fff;
+    background-color: transparent;
+    border-color: #31344c;
+
+  }
+
+  .editprofile-container a{
+    color: #fff;
+
+  }
+
+
+  /*my profile*/
+  .profile-container{
+    justify-content: space-between;
+    width: 1000px;
+    margin: auto;
+    display:flex;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .profile-container {
+      align-items: center;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .profile-main{
+    margin: 0;
+    padding: 0;
+    background-color: #1a1d2f;
+    width: 350px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    color: #fff
+  }
+
+  .profile-main img{
+    margin: 50px auto;
+  }
+
+  .profile-main h2{
+    text-align: center;
+    margin: 0;
+    font-size: 26px;
+    font-family: 'Open Sans Condensed';
+  }
+
+  .profile-main h3{
+    text-align: center;
+    margin-top: 5px;
+    font-size: 20px;
+    font-family: 'Open Sans Condensed';
+  }
+
+  .profile-extend{
+    margin: 0;
+    padding: 0;
+    width: 600px;
+    height: auto;  
+    display: flex;
+    flex-direction: column;
+    color: #fff
+  }
+
+  @media only screen and (max-width: 600px) {
+    .profile-extend {
+      width: 380px;
+    }
+  }
+
+  .profile-extend h2{
+    width: 100%;
+    float: left;
+    margin-top: 50px;
+    font-size: 36px;
+    font-family: 'Open Sans Condensed';
+  }
+
+  .img-profile{
+    width: 200px; height: 200px; object-fit: cover; object-position: center;border-radius: 50%;
+  }
+
+  .gender-lang{
+    text-align: center;
+    width: 100%;
+    height: 80px;
+    padding: 30px;
+  }
+  .gender-lang span i p{
+    display: inline-block;
+  }
+
+  .gender-lang p{
+    margin-left: 10px;
+    font-size: 16px;
+    font-family: 'Open Sans Condensed';
+  }
+
+  .information{
+    text-align: center;
+    width: 250px;
+    margin: 12px auto;
+    line-height: 1rem
+  }
+
+  .btn-editprofile{
+    width: 120px;
+    margin: 25px auto;
+    border-color: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    background-color: transparent;
+  }
+
+  .btn-editprofile a{
+    color: #fff
+  }
+
+  .gameprofile-container{
+    width: 550px;
+    margin-top: 5px;
+    padding: 10px;
+    background: #25283d;
+    color: #000;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .gameprofile-container {
+      width: 380px;
+    }
+  }
+
+  .gameprofile-container h3{
+    color: #007eff;
+    margin: auto;
+    font-size: 24px;
+    font-family: 'Open Sans Condensed';
+  }
+
+  .gameprofile-container hr{
+    border: 2px solid #000000;
+  }
+
+  .gameprofile-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .name-rank{
+    display: flex;
+  }
+
+
+
+  .name-rank img{
+    margin: auto 10px;
+    width: 50px; height: 20px;
+  }
+
+  .server{
+    display: flex;
+  }
+
+  .server p{
+    font-size: 14px;
+    margin: auto;
+    color: #95b1c4
+  }
+
+  .role-container{
+    display: flex;
+    flex-direction: row;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .role-container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .role-container img{
+    width: 80px;
+    height: 80px;
+  }
+
+  .role-container h4{
+    width: 80px;
+    height: 16px;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    color: #95b1c4;
+    text-align: center;
+  }
+
+  .mainrole-wrapper{
+    width: 240px;
+    height: 100px;    
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mainrole-wrapper-img{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .tacticalrole-wrapper{
+    margin-left: 50px;
+    width: 240px;
+    height: 100px;    
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .tacticalrole-wrapper {
+      margin-left: 0;
+    }
+  }
+
+  .tacticalrole-wrapper-img{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .friend-code{
+    display: flex;
+  }
+
+  .friend-code h4{
+    font-size: 14px;
+    color: #95b1c4;
+    font-family: 'Open Sans Condensed';
+    display: flex;
+  }
+
+  .friend-code h5{
+    margin-left: 10px;
+    font-size: 14px;
+    color: #cedbe3;
+    font-family: 'Open Sans Condensed';
+    display: flex;
+  }
+
+
   /*table-members*/
+  .tablecontainer-member{
+    width: 90%;
+    margin: auto;
+  }
+
+
   .table-members{
   background: rgba(58, 54, 54, 0.5);
   box-shadow: 5px 10px 18px #000;
   }
 
-  /*navbar*/
-  .nav-container{
-    width: 85%;
-    justify-content:   
-}
-
 
   /*background*/
+  .comingsoon-pubg{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.3) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url("../assets/img/comingsoon_pubg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  }
+  .bgprofile-top{
+  background:url(../assets/img/bgprofile.jpg);
+  background-repeat:no-repeat;background-attachment:scroll;
+  width: 100%;
+  height: 350px;
+}
+
+  .bgprofile-bottom{
+  background-color: #1e2134;
+  width: 100%;
+  height: 100%;
+}
+
  .bgmain{
   background:url(../assets/img/bgmain.jpg);
-  background-repeat:no-repeat;background-attachment:fixed;background-size:cover
+  background-repeat:no-repeat;background-attachment:fixed;background-size:cover;background-position: center;
 }
 
  .bgcsgo{
   background:url(../assets/img/bgcsgo.jpg);
-  background-repeat:no-repeat;background-attachment:scroll;background-size:cover
+  background-repeat:no-repeat;background-attachment:scroll;background-size:cover;
 }
 
  .bgpubg{
@@ -34,7 +433,7 @@
 }
  .bgadmin{
   background:url(../assets/img/bgadmin.jpg);
-  background-repeat:no-repeat;background-attachment:scroll;background-size:cover
+  background-repeat:no-repeat;background-attachment:fixed;background-size:cover;
  }
 
 
@@ -166,9 +565,22 @@
   margin-left: 300px;
   color: #ffffff;
 }
+
+@media only screen and (max-width: 600px) {
+  .csgot1 {
+    margin-left: 20px;
+  }
+}
+
 .csgot2{
   margin-left: 200px;
   color: #ffffff;
+}
+
+@media only screen and (max-width: 600px) {
+  .csgot2 {
+    margin-left: 30px;
+  }
 }
 
 .pubgt1{
@@ -235,6 +647,12 @@
   -webkit-background-clip: text;*/
 }
 
+@media only screen and (max-width: 600px) {
+  .head h1 {
+    font-size: 2.5rem;
+  }
+}
+
 .head h2 {
   font-family: 'Open Sans Condensed';
   font-size: 1.5rem;
@@ -277,6 +695,12 @@
   padding: 10px 150px;
 }
 
+@media only screen and (max-width: 600px) {
+  .btn-csgo {
+    margin-top: 120px;
+  }
+}
+
 .btn-pubg{
   margin-top: 250px;
   margin-bottom: 60px;
@@ -304,7 +728,7 @@
 /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 #mainNav {
-  min-height: 56px;
+  min-height: 26px;
   background-color: #fff;
 }
 
@@ -341,7 +765,8 @@
     padding-top: 0;
     padding-bottom: 0;
     border-bottom: none;
-    background-color: transparent;
+    /*background-color: transparent;*/
+    background-color: rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s ease-in-out;
   }
   #mainNav .navbar-brand {

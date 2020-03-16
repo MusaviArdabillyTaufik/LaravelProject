@@ -17,10 +17,15 @@ class CreateMembersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('code')->nullable();
+            $table->string('age')->nullable();
+            $table->string('gender')->nullable();
             $table->string('rank')->nullable();
+            $table->string('language')->nullable();
+            $table->string('additional_info')->nullable();
             $table->string('avatar')->nullable();
             $table->integer('id_user')->unsigned();
             $table->integer('id_steam')->unsigned();
+            $table->integer('id_csgo')->unsigned();
             $table->timestamps();
 
             $table->foreign('id_user')->references('id')->on('users')
@@ -28,6 +33,10 @@ class CreateMembersTable extends Migration
                   ->onUpdate('cascade');
 
             $table->foreign('id_steam')->references('id')->on('steam_members')
+                  ->onDelete('restrict')
+                  ->onUpdate('cascade');
+
+            $table->foreign('id_csgo')->references('id')->on('csgos')
                   ->onDelete('restrict')
                   ->onUpdate('cascade');
         });

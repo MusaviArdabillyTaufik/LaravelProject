@@ -1,4 +1,4 @@
-@extends('layouts.logged-in')
+@extends('layouts.main')
 
 @section('content')
 
@@ -17,8 +17,16 @@
                         <input type="text" class="form-control" name="name" value="{{ $user->name }}">
                         <label class="text-light">Code</label>
                         <input type="text" class="form-control" name="code" value="{{ $user->code }}">
+                        <label class="text-light">Age</label>
+                        <input type="text" class="form-control" name="age" value="{{ $user->age }}">
+                        <label class="text-light">Gender</label>
+                        <input type="text" class="form-control" name="gender" value="{{ $user->gender }}">
                         <label class="text-light">Rank</label>
                         <input type="text" class="form-control" name="rank" value="{{ $user->rank }}">
+                        <label class="text-light">Language</label>
+                        <input type="text" class="form-control" name="language" value="{{ $user->language }}">
+                        <label class="text-light">Additional Info</label>
+                        <input type="text" class="form-control" name="additional_info" value="{{ $user->additional_info }}">
                         <label class="text-light">Avatar</label><br>
                         <img class="img-edit" src="{{url('uploads/'.$user->avatar)}}" alt="{{$user->avatar}}">
                         <input type="file" name="avatarinput" accept=".jpg, .png" class="input-ava">

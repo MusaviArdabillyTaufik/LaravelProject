@@ -44,6 +44,23 @@ Route::get('/logout', 'UserController@logout');
 
 Route::group(['middleware' => 'auth'], function(){
 
+	Route::get('/profile', 'PageController@profile');
+
+	Route::get('/editprofile', 'PageController@editprofile');
+
+	Route::post('/saveeditprofile/{id}', 'ProfileController@editprofile');
+
+
+
+	Route::get('/csgo/home', 'PageController@csgohome');
+
+	Route::get('/csgo/players', 'PageController@csgoplayers');
+
+	Route::get('/pubg/home', 'PageController@pubghome');
+
+	Route::get('/pubg/players', 'PageController@pubgplayers');
+
+
 	Route::get('/members', 'Member@index');
 
 	Route::get('/members/export', 'Member@export');

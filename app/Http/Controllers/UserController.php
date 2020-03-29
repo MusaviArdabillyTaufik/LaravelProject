@@ -44,6 +44,7 @@ class UserController extends Controller
  		
         Members::create([
             'name' => $nama,
+            'code' => mt_rand(10000000, 99999999),
             'avatar' => 'defaultava.png',
         	'id_user' => $id,
         	'id_steam' => $id_steam,

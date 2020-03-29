@@ -14,7 +14,7 @@
                     <div class="gameprofile-header">
                         <div class="name-rank">
                             <h3>{{ $tbl->Csgo->name }}</h3>
-                            <img src="{{url('assets/img/'.$tbl->Csgo->rank)}}" onerror="this.style.display='none'">
+                            <img src="{{url('assets/img/rank/'.$tbl->Csgo->rank)}}" onerror="this.style.display='none'">
                         </div>
                         <div class="server">
                             <p>{{ $tbl->Csgo->server_region }}</p>
@@ -25,17 +25,17 @@
                         <div class="mainrole-wrapper">
                             <h4>Main</h4>
                             <div class="mainrole-wrapper-img">
-                                <img src="{{url('assets/img/'.$tbl->Csgo->main_role1)}}" onerror="this.style.display='none'">
-                                <img src="{{url('assets/img/'.$tbl->Csgo->main_role2)}}" onerror="this.style.display='none'">
-                                <img src="{{url('assets/img/'.$tbl->Csgo->main_role3)}}" onerror="this.style.display='none'">
+                                <img src="{{url('assets/img/role/'.$tbl->Csgo->main_role1)}}" onerror="this.style.display='none'">
+                                <img src="{{url('assets/img/role/'.$tbl->Csgo->main_role2)}}" onerror="this.style.display='none'">
+                                <img src="{{url('assets/img/role/'.$tbl->Csgo->main_role3)}}" onerror="this.style.display='none'">
                             </div>
                         </div>
                         <div class="tacticalrole-wrapper">
                             <h4>Tactical</h4>
                             <div class="tacticalrole-wrapper-img">
-                                <img src="{{url('assets/img/'.$tbl->Csgo->tactical_role1)}}" onerror="this.style.display='none'">
-                                <img src="{{url('assets/img/'.$tbl->Csgo->tactical_role2)}}" onerror="this.style.display='none'">
-                                <img src="{{url('assets/img/'.$tbl->Csgo->tactical_role3)}}" onerror="this.style.display='none'">
+                                <img src="{{url('assets/img/role/'.$tbl->Csgo->tactical_role1)}}" onerror="this.style.display='none'">
+                                <img src="{{url('assets/img/role/'.$tbl->Csgo->tactical_role2)}}" onerror="this.style.display='none'">
+                                <img src="{{url('assets/img/role/'.$tbl->Csgo->tactical_role3)}}" onerror="this.style.display='none'">
                             </div>
                         </div>
                     </div><br>

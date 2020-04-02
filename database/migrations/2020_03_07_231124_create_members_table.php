@@ -23,9 +23,9 @@ class CreateMembersTable extends Migration
             $table->string('language')->nullable();
             $table->string('additional_info')->nullable();
             $table->string('avatar')->nullable();
-            $table->integer('id_user')->unsigned();
-            $table->integer('id_steam')->unsigned();
-            $table->integer('id_csgo')->unsigned();
+            $table->integer('id_user')->nullable()->unsigned();
+            $table->integer('id_steam')->nullable()->unsigned();
+            $table->integer('id_csgo')->nullable()->unsigned();
             $table->timestamps();
 
             $table->foreign('id_user')->references('id')->on('users')

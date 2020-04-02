@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Auth;
@@ -11,7 +12,6 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Pagination\LengthAwarePaginator;
 use App\Exports\MembersExport;
-use App\Users;
 use App\Members;
 
 class Member extends Controller
@@ -30,7 +30,7 @@ class Member extends Controller
                 $query->where('name', 'LIKE', "%{$request->searchInput}%")
                       ->orWhere('code', 'LIKE', "%{$request->searchInput}%")
                       ->orWhere('rank', 'LIKE', "%{$request->searchInput}%");
-                })->paginate(5);
+                })->paginate(25);
       return view('members')->with('member', ($showmember));
    }
     
@@ -78,7 +78,8 @@ class Member extends Controller
             'rank' => $request->rank,
             'language' => $request->language,
             'additional_info' => $request->additional_info,
-            'avatar' => $ava->getFilename().'.'.$extension ]);
+            'avatar' => $ava->getFilename().'.'.$extension
+        ]);
 
         return redirect('/members');
     }
@@ -99,7 +100,7 @@ class Member extends Controller
            'rank' => 'required',
            'language' => 'required',
            'additional_info' => 'required',
-           'avatarinput' => 'required|image|mimes:jpeg,png,jpg|max:2048']);
+           'avatarinput' => 'nullable|image|mimes:jpeg,png,jpg|max:2048']);
 
         $user = Members::find($id);
         if ($ava = $request->file('avatarinput')){

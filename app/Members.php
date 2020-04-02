@@ -12,7 +12,7 @@ class Members extends Model
     protected $table = 'members';
     protected $primaryKey = 'id';
 
-    protected $fillable = ['name', 'code', 'rank', 'avatar', 'id_user', 'id_steam', 'id_csgo'];
+    protected $fillable = ['name', 'code', 'age', 'gender', 'rank', 'language', 'additional_info', 'avatar', 'id_user', 'id_steam', 'id_csgo'];
 
     public function user(){
     	return $this->belongsTo('App\User', 'id_user', 'id');
